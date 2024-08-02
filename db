@@ -1,0 +1,11 @@
+use inventory_db;
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome_do_produto varchar(255),
+  descricao_do_produto text,
+  categoria_do_produto VARCHAR(255),
+  preco_do_produto DECIMAL(10, 2),
+  Quantidade_em_estoque int,
+  Data_de_Validade date
+);
