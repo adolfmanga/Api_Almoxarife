@@ -13,8 +13,11 @@ router.post('/', productsController.addproducts);
 
 // Definindo uma rota para atualizar uma transação existente (substituição completa)
 router.put('/:id', productsController.updateproductsPut);
+
 // Definindo uma rota para atualizar uma transação existente (atualização parcial)
 router.patch('/:id', productsController.updateproductsPatch);
+
+router.delete('/:id', productsController.deleteproducts);
 
 // Exportando o roteador
 module.exports = router; 

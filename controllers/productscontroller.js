@@ -68,11 +68,27 @@ const updateproductsPatch = (req, res) => {
     }
     );
    };
+
+   // Função para deletar uma transação existente
+const deleteproducts = (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM products WHERE id = ?', [id], (err, results) => {
+    if (err) {
+    console.error('Erro ao deletar produto:', err);
+    res.status(500).send('Erro ao deletar produto');
+    return;
+    }
+    res.send('produto deletado com sucesso');
+    });
+   };
+
+
    module.exports = {
     getAllproducts,
     addproducts,
     updateproductsPut,
-    updateproductsPatch
+    updateproductsPatch,
+    deleteproducts
    }; 
    
    
